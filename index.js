@@ -14,10 +14,13 @@ const httpsServer = https.createServer({
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-app.use(express.static(path.join(__dirname, "static")))
-app.use('/', require(path.join(__dirname, 'routes/blog.js')))
+app.use(express.static(__dirname + "/public"))
+app.use('/', require(path.join(__dirname, 'routes/base.js')))
  
+// httpsServer.listen(port, () => {
+//   console.log('HTTPS Server running on port 3000');
+// });
 
-httpsServer.listen(port, () => {
-  console.log('HTTPS Server running on port 3000');
-});
+app.listen(port, () => {
+  console.log('hello')
+})
