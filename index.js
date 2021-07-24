@@ -4,7 +4,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path')
 const app = express()
-const port = 6969
+const port = 3000
 
 const httpsServer = https.createServer({
   key: fs.readFileSync('./key.pem'),
@@ -19,5 +19,5 @@ app.use('/', require(path.join(__dirname, 'routes/blog.js')))
  
 
 httpsServer.listen(port, () => {
-  console.log('HTTPS Server running on port 6969');
+  console.log('HTTPS Server running on port 3000');
 });
