@@ -1,0 +1,490 @@
+[
+	{
+		"id": 4595,
+		"parent_id": 0,
+		"status": "processing",
+		"currency": "INR",
+		"version": "5.5.2",
+		"prices_include_tax": false,
+		"date_created": "2021-07-25T20:42:17",
+		"date_modified": "2021-07-25T20:42:17",
+		"discount_total": "0.00",
+		"discount_tax": "0.00",
+		"shipping_total": "50.00",
+		"shipping_tax": "0.00",
+		"cart_tax": "0.00",
+		"total": "598.00",
+		"total_tax": "0.00",
+		"customer_id": 2,
+		"order_key": "wc_order_ixXrsiac7A2UE",
+		"billing": {
+			"first_name": "gold",
+			"last_name": "smith",
+			"company": "",
+			"address_1": "123, test",
+			"address_2": "",
+			"city": "Udaipur",
+			"state": "RJ",
+			"postcode": "313001",
+			"country": "IN",
+			"email": "jyotirmaygoldsmith@gmail.com",
+			"phone": "9462885858"
+		},
+		"shipping": {
+			"first_name": "gold",
+			"last_name": "smith",
+			"company": "",
+			"address_1": "123, test",
+			"address_2": "",
+			"city": "Udaipur",
+			"state": "RJ",
+			"postcode": "313001",
+			"country": "IN"
+		},
+		"payment_method": "cod",
+		"payment_method_title": "Cash on delivery",
+		"transaction_id": "",
+		"customer_ip_address": "182.68.233.69",
+		"customer_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36",
+		"created_via": "checkout",
+		"customer_note": "",
+		"date_completed": null,
+		"date_paid": null,
+		"cart_hash": "1bf863c8c2d0df7c482ab818eb51633e",
+		"number": "4595",
+		"meta_data": [
+			{
+				"id": 9280,
+				"key": "is_vat_exempt",
+				"value": "no"
+			},
+			{
+				"id": 9285,
+				"key": "_bt_shipping_provider",
+				"value": "shiprocket"
+			},
+			{
+				"id": 9286,
+				"key": "_new_order_email_sent",
+				"value": "true"
+			}
+		],
+		"line_items": [
+			{
+				"id": 30,
+				"name": "Macha Army Snrlx Merchendise - L",
+				"product_id": 4302,
+				"variation_id": 4306,
+				"quantity": 1,
+				"tax_class": "",
+				"subtotal": "499.00",
+				"subtotal_tax": "0.00",
+				"total": "499.00",
+				"total_tax": "0.00",
+				"taxes": [],
+				"meta_data": [
+					{
+						"id": 243,
+						"key": "pa_size",
+						"value": "large",
+						"display_key": "Size",
+						"display_value": "L"
+					}
+				],
+				"sku": "Snrlx2",
+				"price": 499,
+				"parent_name": "Macha Army Snrlx Merchendise"
+			}
+		],
+		"tax_lines": [],
+		"shipping_lines": [
+			{
+				"id": 32,
+				"method_title": "Shipping(Inclusive GST)",
+				"method_id": "flat_rate",
+				"instance_id": "1",
+				"total": "50.00",
+				"total_tax": "0.00",
+				"taxes": [],
+				"meta_data": [
+					{
+						"id": 255,
+						"key": "Items",
+						"value": "Macha Army Snrlx Merchendise - L &times; 1",
+						"display_key": "Items",
+						"display_value": "Macha Army Snrlx Merchendise - L &times; 1"
+					}
+				]
+			}
+		],
+		"fee_lines": [
+			{
+				"id": 31,
+				"name": "Cash on delivery",
+				"tax_class": "0",
+				"tax_status": "taxable",
+				"amount": "49",
+				"total": "49.00",
+				"total_tax": "0.00",
+				"taxes": [],
+				"meta_data": []
+			}
+		],
+		"coupon_lines": [],
+		"refunds": [],
+		"date_created_gmt": "2021-07-25T20:42:17",
+		"date_modified_gmt": "2021-07-25T20:42:17",
+		"date_completed_gmt": null,
+		"date_paid_gmt": null,
+		"currency_symbol": "₹",
+		"_links": {
+			"self": [
+				{
+					"href": "https://forthefans.in/wp-json/wc/v3/orders/4595"
+				}
+			],
+			"collection": [
+				{
+					"href": "https://forthefans.in/wp-json/wc/v3/orders"
+				}
+			],
+			"customer": [
+				{
+					"href": "https://forthefans.in/wp-json/wc/v3/customers/2"
+				}
+			]
+		}
+	},
+	{
+		"id": 4593,
+		"parent_id": 0,
+		"status": "processing",
+		"currency": "INR",
+		"version": "5.4.2",
+		"prices_include_tax": false,
+		"date_created": "2021-07-23T12:17:51",
+		"date_modified": "2021-07-25T07:42:37",
+		"discount_total": "0.00",
+		"discount_tax": "0.00",
+		"shipping_total": "50.00",
+		"shipping_tax": "0.00",
+		"cart_tax": "0.00",
+		"total": "598.00",
+		"total_tax": "0.00",
+		"customer_id": 2,
+		"order_key": "wc_order_8mTuoYjnu3Qlu",
+		"billing": {
+			"first_name": "gold",
+			"last_name": "smith",
+			"company": "",
+			"address_1": "123, test",
+			"address_2": "",
+			"city": "Udaipur",
+			"state": "RJ",
+			"postcode": "313001",
+			"country": "IN",
+			"email": "jyotirmaygoldsmith@gmail.com",
+			"phone": "9462885858"
+		},
+		"shipping": {
+			"first_name": "gold",
+			"last_name": "smith",
+			"company": "",
+			"address_1": "123, test",
+			"address_2": "",
+			"city": "Udaipur",
+			"state": "RJ",
+			"postcode": "313001",
+			"country": "IN"
+		},
+		"payment_method": "cod",
+		"payment_method_title": "Cash on delivery",
+		"transaction_id": "",
+		"customer_ip_address": "122.177.9.93",
+		"customer_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0",
+		"created_via": "checkout",
+		"customer_note": "",
+		"date_completed": null,
+		"date_paid": null,
+		"cart_hash": "418eb618d91844796da02a20acab2682",
+		"number": "4593",
+		"meta_data": [
+			{
+				"id": 9207,
+				"key": "is_vat_exempt",
+				"value": "no"
+			},
+			{
+				"id": 9212,
+				"key": "_bt_shipping_provider",
+				"value": "shiprocket"
+			},
+			{
+				"id": 9213,
+				"key": "_new_order_email_sent",
+				"value": "true"
+			}
+		],
+		"line_items": [
+			{
+				"id": 27,
+				"name": "Macha Army Snrlx Merchendise - 2XL",
+				"product_id": 4302,
+				"variation_id": 4304,
+				"quantity": 1,
+				"tax_class": "",
+				"subtotal": "499.00",
+				"subtotal_tax": "0.00",
+				"total": "499.00",
+				"total_tax": "0.00",
+				"taxes": [],
+				"meta_data": [
+					{
+						"id": 221,
+						"key": "pa_size",
+						"value": "2xl",
+						"display_key": "Size",
+						"display_value": "2XL"
+					}
+				],
+				"sku": "Snrlx2",
+				"price": 499,
+				"parent_name": "Macha Army Snrlx Merchendise"
+			}
+		],
+		"tax_lines": [],
+		"shipping_lines": [
+			{
+				"id": 29,
+				"method_title": "Shipping(Inclusive GST)",
+				"method_id": "flat_rate",
+				"instance_id": "1",
+				"total": "50.00",
+				"total_tax": "0.00",
+				"taxes": [],
+				"meta_data": [
+					{
+						"id": 233,
+						"key": "Items",
+						"value": "Macha Army Snrlx Merchendise - 2XL &times; 1",
+						"display_key": "Items",
+						"display_value": "Macha Army Snrlx Merchendise - 2XL &times; 1"
+					}
+				]
+			}
+		],
+		"fee_lines": [
+			{
+				"id": 28,
+				"name": "Cash on delivery",
+				"tax_class": "0",
+				"tax_status": "taxable",
+				"amount": "49",
+				"total": "49.00",
+				"total_tax": "0.00",
+				"taxes": [],
+				"meta_data": []
+			}
+		],
+		"coupon_lines": [],
+		"refunds": [],
+		"date_created_gmt": "2021-07-23T12:17:51",
+		"date_modified_gmt": "2021-07-25T07:42:37",
+		"date_completed_gmt": null,
+		"date_paid_gmt": null,
+		"currency_symbol": "₹",
+		"_links": {
+			"self": [
+				{
+					"href": "https://forthefans.in/wp-json/wc/v3/orders/4593"
+				}
+			],
+			"collection": [
+				{
+					"href": "https://forthefans.in/wp-json/wc/v3/orders"
+				}
+			],
+			"customer": [
+				{
+					"href": "https://forthefans.in/wp-json/wc/v3/customers/2"
+				}
+			]
+		}
+	},
+	{
+		"id": 4591,
+		"parent_id": 0,
+		"status": "processing",
+		"currency": "INR",
+		"version": "5.4.2",
+		"prices_include_tax": false,
+		"date_created": "2021-07-20T05:00:37",
+		"date_modified": "2021-07-20T05:00:38",
+		"discount_total": "0.00",
+		"discount_tax": "0.00",
+		"shipping_total": "50.00",
+		"shipping_tax": "0.00",
+		"cart_tax": "0.00",
+		"total": "847.00",
+		"total_tax": "0.00",
+		"customer_id": 0,
+		"order_key": "wc_order_YKO2BhWtiHW4b",
+		"billing": {
+			"first_name": "Subha",
+			"last_name": "Dam",
+			"company": "",
+			"address_1": "qtr. no. 58/B",
+			"address_2": "b g colony",
+			"city": "New Bongaigaon",
+			"state": "AS",
+			"postcode": "783381",
+			"country": "IN",
+			"email": "damsubha06@gmail.com",
+			"phone": "9706908538"
+		},
+		"shipping": {
+			"first_name": "Subha",
+			"last_name": "Dam",
+			"company": "",
+			"address_1": "qtr. no. 58/B",
+			"address_2": "b g colony",
+			"city": "New Bongaigaon",
+			"state": "AS",
+			"postcode": "783381",
+			"country": "IN"
+		},
+		"payment_method": "cod",
+		"payment_method_title": "Cash on delivery",
+		"transaction_id": "",
+		"customer_ip_address": "2402:3a80:dea:564a:49fc:257:a3c7:fb3a",
+		"customer_user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+		"created_via": "checkout",
+		"customer_note": "",
+		"date_completed": null,
+		"date_paid": null,
+		"cart_hash": "d3c106e0732be57d66a4790ca3b74814",
+		"number": "4591",
+		"meta_data": [
+			{
+				"id": 9165,
+				"key": "is_vat_exempt",
+				"value": "no"
+			},
+			{
+				"id": 9170,
+				"key": "_bt_shipping_provider",
+				"value": "shiprocket"
+			},
+			{
+				"id": 9171,
+				"key": "_new_order_email_sent",
+				"value": "true"
+			}
+		],
+		"line_items": [
+			{
+				"id": 23,
+				"name": "Best Down South Lord Bathura Merchendise - L",
+				"product_id": 4266,
+				"variation_id": 4269,
+				"quantity": 1,
+				"tax_class": "",
+				"subtotal": "399.00",
+				"subtotal_tax": "0.00",
+				"total": "399.00",
+				"total_tax": "0.00",
+				"taxes": [],
+				"meta_data": [
+					{
+						"id": 189,
+						"key": "pa_size",
+						"value": "large",
+						"display_key": "Size",
+						"display_value": "L"
+					}
+				],
+				"sku": "Bathura1",
+				"price": 399,
+				"parent_name": "Best Down South Lord Bathura Merchendise"
+			},
+			{
+				"id": 24,
+				"name": "Aiyayo Lord Bathura Merchendise - L",
+				"product_id": 4249,
+				"variation_id": 4260,
+				"quantity": 1,
+				"tax_class": "",
+				"subtotal": "349.00",
+				"subtotal_tax": "0.00",
+				"total": "349.00",
+				"total_tax": "0.00",
+				"taxes": [],
+				"meta_data": [
+					{
+						"id": 199,
+						"key": "pa_size",
+						"value": "large",
+						"display_key": "Size",
+						"display_value": "L"
+					}
+				],
+				"sku": "Bathura2",
+				"price": 349,
+				"parent_name": "Aiyayo Lord Bathura Merchendise"
+			}
+		],
+		"tax_lines": [],
+		"shipping_lines": [
+			{
+				"id": 26,
+				"method_title": "Shipping(Inclusive GST)",
+				"method_id": "flat_rate",
+				"instance_id": "1",
+				"total": "50.00",
+				"total_tax": "0.00",
+				"taxes": [],
+				"meta_data": [
+					{
+						"id": 211,
+						"key": "Items",
+						"value": "Best Down South Lord Bathura Merchendise - L &times; 1, Aiyayo Lord Bathura Merchendise - L &times; 1",
+						"display_key": "Items",
+						"display_value": "Best Down South Lord Bathura Merchendise - L &times; 1, Aiyayo Lord Bathura Merchendise - L &times; 1"
+					}
+				]
+			}
+		],
+		"fee_lines": [
+			{
+				"id": 25,
+				"name": "Cash on delivery",
+				"tax_class": "0",
+				"tax_status": "taxable",
+				"amount": "49",
+				"total": "49.00",
+				"total_tax": "0.00",
+				"taxes": [],
+				"meta_data": []
+			}
+		],
+		"coupon_lines": [],
+		"refunds": [],
+		"date_created_gmt": "2021-07-20T05:00:37",
+		"date_modified_gmt": "2021-07-20T05:00:38",
+		"date_completed_gmt": null,
+		"date_paid_gmt": null,
+		"currency_symbol": "₹",
+		"_links": {
+			"self": [
+				{
+					"href": "https://forthefans.in/wp-json/wc/v3/orders/4591"
+				}
+			],
+			"collection": [
+				{
+					"href": "https://forthefans.in/wp-json/wc/v3/orders"
+				}
+			]
+		}
+	}
+]

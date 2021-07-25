@@ -15,8 +15,9 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 app.use(express.static(__dirname + "/public"))
-app.use('/', require(path.join(__dirname, 'routes/base.js')))
- 
+app.use('/', require('./routes/base.js'))
+app.use('/', require('./routes/alert.js'))
+
 // httpsServer.listen(port, () => {
 //   console.log('HTTPS Server running on port 3000');
 // });
