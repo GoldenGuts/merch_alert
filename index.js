@@ -16,6 +16,7 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 app.set('socketio', io);
 
+app.use(express.json()); 
 app.use(express.static(__dirname + "/public"))
 app.use('/', require('./routes/base.js'))
 app.use('/alerts', require('./routes/alert.js'))
