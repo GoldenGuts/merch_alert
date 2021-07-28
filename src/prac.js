@@ -12,20 +12,20 @@ function fillData(orderID, streamer, client, product) {
 	main.push(main_data)
 }
 
-(async () => {
-	await ap.getOrderDetails('processing').then()
-	for(let element of ap.productData.variationID) {
-		await ap.getProductDetails(element).then()
-	}
-	for(let e = 0; e < (ap.orderIDs).length; e++) {
-		fillData(
-			ap.orderIDs[e], 
-			ap.productData.streamerName[e], 
-			ap.firstNames[e], 
-			ap.productData.productType[e] 
-		)
-	}
-})();
+// (async () => {
+// 	await ap.getOrderDetails('processing').then()
+// 	for(let element of ap.productData.variationID) {
+// 		await ap.getProductDetails(element).then()
+// 	}
+// 	for(let e = 0; e < (ap.orderIDs).length; e++) {
+// 		fillData(
+// 			ap.orderIDs[e], 
+// 			ap.productData.streamerName[e], 
+// 			ap.firstNames[e], 
+// 			ap.productData.productType[e] 
+// 		)
+// 	}
+// })();
 
 async function getMain() {
 	await ap.getOrderDetails('processing').then()
