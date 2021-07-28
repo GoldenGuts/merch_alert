@@ -14,4 +14,10 @@ router.get('/test', (req, res)=>{
     });
 })
 
+router.get('/generate', (req, res)=>{ 
+    res.render('generatePage', { 
+        title: "Generating Links for Streamers"
+    });
+})
+
 module.exports = router
