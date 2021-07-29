@@ -22,7 +22,7 @@ router.get('/generate', (req, res)=>{
 })
 
 router.post('/git-pull', (req, res)=>{
-    shell.exec('cd /home/forthefans/backend && git reset HEAD~1 –-hard && git pull')
+    shell.exec('cd /home/forthefans/backend && git reset HEAD~1 –-hard && git pull && pm2 restart index.js')
     res.status(200).json({message: "okay"})
 })
 
