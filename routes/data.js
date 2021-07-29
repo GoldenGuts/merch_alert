@@ -39,8 +39,8 @@ router.post('/check-streamer', (req, res)=>{
 				console.log("Row inserted with id = "
 				    + rows.insertId);
 			});
-			console.log({ "name" : unique_url })
-			res.json({ "name" : unique_url })
+			console.log({ "url" : unique_url })
+			res.json({ "url" : unique_url })
 		}
 		else {
 			console.log(data)

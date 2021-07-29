@@ -33,14 +33,14 @@ const generateLink = async () => {
 		document.getElementById("generated_url_block").style.display = "block";
 		button.innerHTML = "Generate Again?";
 		console.log(content)
-		const link = content.unique_url;
+		const link = content.url;
 		url.value = '';
 		url.value = "https://forthefans.in:3000/alerts/" + link;	
 	} else {
 		document.getElementById("generated_url_block").style.display = "block";
 		button.innerHTML = "Found The Link!!";
 		console.log(content)
-		const link = content[0].RowDataPacket.unique_url;
+		const link = content[0].unique_url;
 		url.value = '';
 		url.value = "https://forthefans.in:3000/alerts/"+link;
 	}
