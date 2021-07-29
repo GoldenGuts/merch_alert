@@ -20,11 +20,11 @@ router.post('/check-streamer', (req, res)=>{
 	console.log('Streamer Name Sent By Generator' + (req.body))
 	let response_data;
 
-	let sql = 'SELECT * FROM merch_alert.names WHERE=?';
+	let sql = 'SELECT * FROM merch_alert WHERE name = ?';
 
 	let query = mysql.format(sql, req.body);
 
-	pool.query(query,(err, data) => {
+	db.query(query,(err, data) => {
 		if(err) {
 			console.error(err);
 			return;

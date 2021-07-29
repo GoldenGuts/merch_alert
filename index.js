@@ -23,12 +23,13 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 app.set('socketio', io);
 
+app.use(express.text());
 app.use(express.json()); 
 app.use(express.static(__dirname + "/public"))
 app.use('/', require('./routes/base.js'))
 app.use('/alerts', require('./routes/alert.js'))
 app.use('/', require('./routes/webhook'))
-
+app.use('/', require('./routes/data'))
 
 //HTTPS for the website
 httpsServer.listen(port, () => {
