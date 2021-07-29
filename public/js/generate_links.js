@@ -14,10 +14,10 @@ const generateLink = async () => {
 	});
 	const content = await rawResponse.json();
 
-	if(!content.length) {
+	if(content.name) {
 		document.getElementById("generated_url_block").style.display = "block";
 		document.getElementById("generate").innerHTML = "Generate Again?";
-		const link =  
+		const link = content.unique_url;
 		document.getElementById("generated_url").value = '';
 		document.getElementById("generated_url").value = "https://forthefans.in:3000/alerts/"+link;	
 	} else {

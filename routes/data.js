@@ -16,28 +16,6 @@ db.connect(function(err) {
 	console.log('Connected to the MySQL server.');
 });
 
-router.post('/add-streamer', (req, res)=>{
-	console.log('Streamer Name Sent By Generator ' + (req.body))
-
-	
-
-	let query = mysql.format(sql, req.body);
-
-	db.query(query,(err, data) => {
-		if(err) {
-			console.error(err);
-			return;
-		}
-
-		// rows fetch
-
-		console.log(data);
-		res.json(data);
-	});
-	res.status(200)
-	// res.json({ message: 'ok' })
-})
-
 router.post('/check-streamer', (req, res)=>{
 	console.log('Streamer Name Sent By Generator ' + (req.body))
 
@@ -54,9 +32,13 @@ router.post('/check-streamer', (req, res)=>{
 
 			const unique_url = req.body + (Math.floor(Math.random() * 10000) + 111);
 
-			let sql_new = `INSERT INTO merch_alert (name, unique_url) VALUES (${(req.body).toUpperCase()}, ${unique_url})`;
+			let sql_new = "INSERT INTO merch_alert (name, unique_url) VALUES (?, ?)";
 
-			db.query(sql_new);
+			db.query(sql_new, [(req.body).toUpperCase(), unique_url], (err, rows) => {
+				if (err) throw err;
+				console.log("Row inserted with id = "
+				    + rows.insertId);
+			});
 
 			res.json({ "name" : unique_url })
 		}
