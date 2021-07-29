@@ -6,25 +6,26 @@ let button = document.getElementById("generate");
 let url = document.getElementById("generated_url");
 const search_data = document.getElementById("search_box");	
 
-button.disabled = true;
 search_data.addEventListener("change", stateHandle);
+button.disabled = true;
 
 function stateHandle() {
-	if((search_data.value).length === 4 || (search_data.value).length == 9) {
-	    button.disabled = true;
-	} else {
+	if((search_data.value).length === 4 || (search_data.value).length == 4) {
 	    button.disabled = false;
+	} else {
+	    button.disabled = true;
 	}
 }
 
 const generateLink = async () => {
+	button.disabled = true;
 	const rawResponse = await fetch('https://forthefans.in:3000/check-streamer', {
 	  method: 'POST',
 	  headers: {
 	    'Accept': 'application/json',
 	    'Content-Type': 'text/plain'
 	  },
-	  body: search_data.value;
+	  body: search_data.value
 	});
 	const content = await rawResponse.json();
 

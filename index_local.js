@@ -37,6 +37,6 @@ app.use('/', require('./routes/data'))
 // });
 
 // HTTP for the loca env
-server.listen(4000, () => {
-  console.log(`listening on *:${4000}`);
+server.listen(port, () => {
+  console.log(`listening on *:${port}`);
 });
