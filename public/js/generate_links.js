@@ -17,12 +17,14 @@ const generateLink = async () => {
 	if(content.name) {
 		document.getElementById("generated_url_block").style.display = "block";
 		document.getElementById("generate").innerHTML = "Generate Again?";
+		console.log(content)
 		const link = content.unique_url;
 		document.getElementById("generated_url").value = '';
 		document.getElementById("generated_url").value = "https://forthefans.in:3000/alerts/"+link;	
 	} else {
 		document.getElementById("generated_url_block").style.display = "block";
 		document.getElementById("generate").innerHTML = "Found The Link!!";
+		console.log(content)
 		const link = content[0].RowDataPacket.unique_url;
 		document.getElementById("generated_url").value = '';
 		document.getElementById("generated_url").value = "https://forthefans.in:3000/alerts/"+link;
