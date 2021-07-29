@@ -1,3 +1,7 @@
+const form = document.getElementById('main_form');
+function handleForm(event) { event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
+
 const generateLink = async () => {
 	const search_data = document.getElementById("search_box").value	
 	const rawResponse = await fetch('https://forthefans.in:3000/check-streamer', {
