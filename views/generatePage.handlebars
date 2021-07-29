@@ -5,15 +5,24 @@
         Generating a SECRET Link for Streamer
     </h2>
 
-    <form style="margin: 2%;;">
+    <form style="margin: 2%;">
         <div class="form-group">
             <label for="formGroupExampleInput">Type SKU</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Only First 4 letters of SKU">
+            <input id="search_box" class="form-control" id="formGroupExampleInput" placeholder="Only First 4 letters of SKU" value="" required>
+            <button id="generate" style="margin-top: 2%;" class="btn btn-outline-info" onclick="generateLink()">
+                Generate Now!
+            </button>
         </div>
     </form>
 
-    <button style="margin: 2%;" type="button" class="btn btn-outline-info">
-        Generate Now!
-    </button>
+    
+
+    <form id="generated_url_block" style="margin: 2%; display: none;">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Generated URL</label>
+            <input id="generated_url" type="text" class="form-control" id="formGroupExampleInput" placeholder="Only First 4 letters of SKU" value="" disabled>
+        </div>
+    </form>
+
     <script src="/js/generate_links.js"></script>
 </div>

@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express')
 const path = require('path')
 const main = require('../data/alert_data.json')
@@ -5,15 +6,19 @@ const main = require('../data/alert_data.json')
 
 const router = express.Router();
 
-router.get('/:name', (req, res)=>{
+router.post('/:name', (req, res)=>{
 
 	var io = req.app.get('socketio');
-	io.on('connection', (socket) => {
-		console.log("Socket IO");
-		io.emit('Hello');
-		io.emit('message', 'inside this')
-	});
 
+	//socket rooms
+	//
+
+
+	
+	const note = response.body.customer_note
+	const streamer = response.body.line_items[0].sku.slice(0,4)
+	const product  = response.body.line_items[0].sku.slice(0,5)
+	const buyer = response.body.billing.first_name
 	// TODO 
 	// Find if name exist in streamers.json
 	// Math.random().toString(36).slice(2);
