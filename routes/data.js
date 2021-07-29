@@ -34,9 +34,9 @@ router.post('/check-streamer', (req, res)=>{
 
 		response_data = data;
 		console.log(data);
-		console.log("Inside Pool Query");
 	});
 	res.status(200).json(response_data);
+	res.json({ message: 'ok' })
 })
 
 module.exports = router
