@@ -18,7 +18,6 @@ db.connect(function(err) {
 
 router.post('/check-streamer', (req, res)=>{
 	console.log('Streamer Name Sent By Generator ' + (req.body))
-	let response_data;
 
 	let sql = 'SELECT * FROM merch_alert WHERE name = ?';
 
@@ -33,11 +32,10 @@ router.post('/check-streamer', (req, res)=>{
 		// rows fetch
 
 		console.log(data);
-		response_data = data;
+		res.json(data);
 	});
-	console.log("Outside Loop"+response_data);
-	res.json(response_data);
-	res.json({ message: 'ok' })
+	res.status(200)
+	// res.json({ message: 'ok' })
 })
 
 module.exports = router
