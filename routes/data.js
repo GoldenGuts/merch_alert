@@ -29,7 +29,9 @@ router.post('/check-streamer', (req, res)=>{
 			console.error(err);
 			return;
 		}
+
 		// rows fetch
+
 		response_data = data;
 		console.log(data);
 		console.log("Inside Pool Query");
