@@ -17,10 +17,14 @@ const generateLink = async () => {
 	if(!content.length) {
 		document.getElementById("generated_url_block").style.display = "block";
 		document.getElementById("generate").innerHTML = "Generate Again?";
-		const link = search_data + (Math.floor(Math.random() * 10000) + 111);
+		const link =  
 		document.getElementById("generated_url").value = '';
 		document.getElementById("generated_url").value = "https://forthefans.in:3000/alerts/"+link;	
 	} else {
-		console.log(content);
+		document.getElementById("generated_url_block").style.display = "block";
+		document.getElementById("generate").innerHTML = "Found The Link!!";
+		const link = content[0].RowDataPacket.unique_url
+		document.getElementById("generated_url").value = '';
+		document.getElementById("generated_url").value = "https://forthefans.in:3000/alerts/"+link;
 	}
 };
