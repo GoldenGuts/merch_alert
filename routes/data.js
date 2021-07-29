@@ -54,13 +54,13 @@ router.post('/check-streamer', (req, res)=>{
 
 			const unique_url = req.body + (Math.floor(Math.random() * 10000) + 111);
 
-			let sql_new = `INSERT INTO merch_alert(name,unique_url)
-				       VALUES(${(req.body).toUpperCase()},${unique_url})`;
+			let sql_new = `INSERT INTO merch_alert (name, unique_url) VALUES (${(req.body).toUpperCase()}, ${unique_url})`;
 
 			db.query(sql_new);
 
 			res.json({ "name" : unique_url })
 		}
+		else res.json(data);
 	});
 	res.status(200)
 	// res.json({ message: 'ok' })
