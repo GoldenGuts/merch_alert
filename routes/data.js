@@ -61,7 +61,6 @@ router.post('/check-streamer', (req, res)=>{
 
 			res.json({ "name" : unique_url })
 		}
-		else res.json(data);
 	});
 	res.status(200)
 	// res.json({ message: 'ok' })
