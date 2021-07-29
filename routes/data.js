@@ -17,7 +17,7 @@ db.connect(function(err) {
 });
 
 router.post('/check-streamer', (req, res)=>{
-	console.log('Streamer Name Sent By Generator' + (req.body))
+	console.log('Streamer Name Sent By Generator ' + (req.body))
 	let response_data;
 
 	let sql = 'SELECT * FROM merch_alert WHERE name = ?';
