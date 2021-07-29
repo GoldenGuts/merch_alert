@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const shell = require('shelljs')
 
 router.get('/', (req, res)=>{
     res.render('home', { 
@@ -18,6 +19,11 @@ router.get('/generate', (req, res)=>{
     res.render('generatePage', { 
         title: "Generating Links for Streamers"
     });
+})
+
+router.post('/git-pull', (req, res)=>{
+    shell.exec('cd /home/forthefans/backend/ && git reset –hard HEAD && git pull')
+    res.status(200).json({message: "okay"})
 })
 
 module.exports = router
