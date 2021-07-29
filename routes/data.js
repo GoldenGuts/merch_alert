@@ -13,23 +13,28 @@ db.connect(function(err) {
 	if (err) {
 	  return console.error('error: ' + err.message);
 	}
-      
 	console.log('Connected to the MySQL server.');
 });
 
-router.get('/getposts', (req, res) => {
-	let sql = 'SELECT * FROM merch_alert';
-	let query = db.query(sql, (err, results) => {
-	    if(err) throw err;
-	    console.log(results);
-	    res.send('Posts fetched...');
-	});
-});
-
 router.post('/check-streamer', (req, res)=>{
-	console.log('inside check streamer' + req)
+	console.log('Streamer Name Sent By Generator' + (req.body))
+	let response_data;
 
-	res.json()
+	let sql = 'SELECT * FROM merch_alert.names WHERE=?';
+
+	let query = mysql.format(sql, req.body);
+
+	pool.query(query,(err, data) => {
+		if(err) {
+			console.error(err);
+			return;
+		}
+		// rows fetch
+		response_data = data;
+		console.log(data);
+		console.log("Inside Pool Query");
+	});
+	res.status(200).json(response_data);
 })
 
 module.exports = router
