@@ -23,7 +23,7 @@ const generateLink = async () => {
 	} else {
 		document.getElementById("generated_url_block").style.display = "block";
 		document.getElementById("generate").innerHTML = "Found The Link!!";
-		const link = content[0].RowDataPacket.unique_url
+		const link = content[0].RowDataPacket.unique_url;
 		document.getElementById("generated_url").value = '';
 		document.getElementById("generated_url").value = "https://forthefans.in:3000/alerts/"+link;
 	}

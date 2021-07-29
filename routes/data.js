@@ -34,15 +34,18 @@ router.post('/check-streamer', (req, res)=>{
 
 			let sql_new = "INSERT INTO merch_alert (name, unique_url) VALUES (?, ?)";
 
-			db.query(sql_new, [(req.body).toUpperCase(), unique_url], (err, rows) => {
-				if (err) throw err;
+			db.query(sql_new, [(req.body).toUpperCase(), unique_url], (err1, rows) => {
+				if (err1) throw err1;
 				console.log("Row inserted with id = "
 				    + rows.insertId);
 			});
-
+			console.log({ "name" : unique_url })
 			res.json({ "name" : unique_url })
 		}
-		else res.json(data);
+		else {
+			console.log(data)
+			res.json(data);
+		}
 	});
 	res.status(200)
 	// res.json({ message: 'ok' })
