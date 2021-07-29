@@ -1,7 +1,7 @@
-function generateLink() {
+async function generateLink() {
 	const search_data = document.getElementById("search_box").value
 	console.log("inside generate links");
-	const response = fetch('https://forthefans.in:3000/check-streamer', {
+	const response = await fetch('https://forthefans.in:3000/check-streamer', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'text/plain',
