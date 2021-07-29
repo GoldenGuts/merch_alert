@@ -2,31 +2,45 @@ const form = document.getElementById('main_form');
 function handleForm(event) { event.preventDefault(); } 
 form.addEventListener('submit', handleForm);
 
+let button = document.getElementById("generate");
+let url = document.getElementById("generated_url");
+const search_data = document.getElementById("search_box");	
+
+button.disabled = true;
+search_data.addEventListener("change", stateHandle);
+
+function stateHandle() {
+	if((search_data.value).length === 4 || (search_data.value).length == 9) {
+	    button.disabled = true;
+	} else {
+	    button.disabled = false;
+	}
+}
+
 const generateLink = async () => {
-	const search_data = document.getElementById("search_box").value	
 	const rawResponse = await fetch('https://forthefans.in:3000/check-streamer', {
 	  method: 'POST',
 	  headers: {
 	    'Accept': 'application/json',
 	    'Content-Type': 'text/plain'
 	  },
-	  body: search_data
+	  body: search_data.value;
 	});
 	const content = await rawResponse.json();
 
 	if(content.name) {
 		document.getElementById("generated_url_block").style.display = "block";
-		document.getElementById("generate").innerHTML = "Generate Again?";
+		button.innerHTML = "Generate Again?";
 		console.log(content)
 		const link = content.unique_url;
-		document.getElementById("generated_url").value = '';
-		document.getElementById("generated_url").value = "https://forthefans.in:3000/alerts/"+link;	
+		url.value = '';
+		url.value = "https://forthefans.in:3000/alerts/" + link;	
 	} else {
 		document.getElementById("generated_url_block").style.display = "block";
-		document.getElementById("generate").innerHTML = "Found The Link!!";
+		button.innerHTML = "Found The Link!!";
 		console.log(content)
 		const link = content[0].RowDataPacket.unique_url;
-		document.getElementById("generated_url").value = '';
-		document.getElementById("generated_url").value = "https://forthefans.in:3000/alerts/"+link;
+		url.value = '';
+		url.value = "https://forthefans.in:3000/alerts/"+link;
 	}
 };
