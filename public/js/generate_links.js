@@ -29,7 +29,7 @@ const generateLink = async () => {
 	});
 	const content = await rawResponse.json();
 
-	if(content.name) {
+	if(content.url) {
 		document.getElementById("generated_url_block").style.display = "block";
 		button.innerHTML = "Generate Again?";
 		console.log(content)
