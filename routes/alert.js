@@ -22,7 +22,7 @@ router.get('/:streamer_url', (req, res)=>{
 		}
 		else {
 			try { console.log(data[0].complete_url); } catch (e){console.log(e)}
-			res.render('blankPage');
+			res.render('alertMain');
 		}
 	})
 });
@@ -30,11 +30,6 @@ router.get('/:streamer_url', (req, res)=>{
 
 
 router.post('/:streamer_url', (req, res) => {
-
-	res.render('alertMain', {
-		name: JSON.parse(req.body).name,
-		product: JSON.parse(req.body).product
-	});
 
 	console.log("name = " + JSON.parse(req.body).name)
 
