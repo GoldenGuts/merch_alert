@@ -39,9 +39,9 @@ io.on('connection', socket => {
           method: 'POST',
           headers: {
             'Accept': 'text/html',
-            'Content-Type': 'text/plain'
+            'Content-Type': 'application/json'
           },
-          body: 'hello'
+          body: [{"name":"Golden","product":"T-Shirt"}]
         })
         
       }
