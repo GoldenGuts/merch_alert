@@ -35,7 +35,6 @@ io.on('connection', socket => {
       }
       else {
         const streamer_url = results[0].complete_url;
-        console.log(results[0].api_url);
         
         alertsNsp.to(streamer_url).emit("order_alert", { product: "T-Shirt", name: "Customer" })
       }

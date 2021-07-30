@@ -9,7 +9,7 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 	});
 
 } else if ( (window.location.href).includes('alerts/') ) {
-	
+
 	const alertSocket = io("https://forthefans.in:3000/alerts");
 
 	alertSocket.on("connect", () => {
@@ -28,7 +28,7 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 
 		alert.classList.add("show");
 
-		setTimeout(() => alert.classList.remove("show"), 5000);
+		setTimeout(() => alert.classList.remove("show"), 10000);
 	});
 
 } else {
