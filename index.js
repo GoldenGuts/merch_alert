@@ -17,6 +17,8 @@ const httpsServer = https.createServer({
 //For running on Website
 const io = require("socket.io")(httpsServer);
 
+const alertsNsp = io.of('/alerts');
+
 io.on('connection', socket => {
   
   console.log("Inside Main IO")
@@ -32,24 +34,16 @@ io.on('connection', socket => {
         console.log('Wrong Name')
       }
       else {
+        const streamer_url = results[0].complete_url;
         console.log(results[0].api_url);
         
-        fetch(results[0].api_url, {
-          method: 'POST',
-          headers: {
-            'Accept': 'text/html',
-            'Content-Type': 'text/plain'
-          },
-          body: '{"name":"Golden","product":"T-Shirt"}'
-        })
-        
+        alertsNsp.to(streamer_url).emit("order_alert", { product: "T-Shirt", name: "Customer" })
       }
     })
   })
 })
   
-io.of('/alerts').on('connection', socket => {
-
+alertsNsp.on('connection', socket => {
     console.log("Inside Alert IO")
     
     socket.on("streamer_url", url =>{

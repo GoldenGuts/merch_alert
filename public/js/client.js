@@ -9,11 +9,17 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 	});
 
 } else if ( (window.location.href).includes('alerts/') ) {
-	socket.on("connect", () => {
-		socket.emit("streamer_url", window.location.href);
+	const alertSocket = io("https://forthefans.in:3000/alerts");
+
+	alertSocket.on("connect", () => {
+		alertSocket.emit("streamer_url", window.location.href);
+	});
+
+	alertSocket.on("order_alert", order => {
+		console.log(order);
 	});
 } else {
 	socket.on('message', message => {
 		console.log(message);
-	})
+	});
 }

@@ -27,6 +27,8 @@ router.get('/:streamer_url', (req, res)=>{
 	})
 });
 
+
+
 router.post('/:streamer_url', (req, res) => {
 
 	res.render('alertMain', {
