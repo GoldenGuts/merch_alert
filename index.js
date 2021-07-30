@@ -4,7 +4,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path')
 const app = express();
-const fetch = require('node-fetch')
+const request = require('request');
 
 const port = process.env.PORT || 3000;
 const server = require('http').createServer(app);
@@ -34,17 +34,30 @@ io.on('connection', socket => {
       else {
         console.log(results[0].api_url);
 
-        fetch(results[0].api_url, {
-          method: 'POST',
+        // fetch(results[0].api_url, {
+        //   method: 'POST',
+        //   headers: {
+        //     'Accept': 'text/html',
+        //     'Content-Type': 'application/json'
+        //   },
+        //   body: {
+        //     "name": "Golden",
+        //     "product": "T-Shirt"
+        //   }
+        // })
+
+        request.post({ 
           headers: {
-            'Accept': 'text/html',
-            'Content-Type': 'application/json'
+            'content-type' : 'application/json'
           },
+          url: results[0].api_url, 
           body: {
             "name": "Golden",
             "product": "T-Shirt"
-          }
-        })
+          }}, 
+          function(error, response, body){
+              console.log(body); 
+          }); 
       }
     })
   })
