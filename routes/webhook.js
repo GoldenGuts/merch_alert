@@ -19,7 +19,7 @@ router.post('/get_data', (request,response) => {
 		name: request.body.billing.first_name
 	}
 
-	const { db } = require('./mysql_config/config')
+	const { db } = require('../mysql_config/config')
 	let sql = `SELECT * FROM merch_alert WHERE name=?`;
 	db.query(sql, streamer.toString().toUpperCase(), (error, results, fields) => {
 	  if (error) {

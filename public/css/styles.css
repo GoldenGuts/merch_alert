@@ -27,6 +27,7 @@ h1{
 }
 
 .alert {
+  pointer-events: none;
   margin: 0;
   font-size: 8em;
   padding: 0;
