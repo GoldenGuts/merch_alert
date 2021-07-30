@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+let alert_data;
 
 router.post('/get_data', (request,response) => {
 	// code to perform particular action.
@@ -8,7 +9,8 @@ router.post('/get_data', (request,response) => {
 	console.log('this ran');
 	response.status(200).json({ message: 'ok' });
 	console.log(request.body);
+	alert_data = request.body;
 	// console.log(response);
 });
 
-module.exports = router
+module.exports = { router, alert_data }

@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const { mysql, db } = require('../mysql_config/config')
 const router = express.Router();
+const { alert_data } = require('./webhook')
 
 router.get('/:streamer_url', (req, res)=>{
 
@@ -10,8 +11,6 @@ router.get('/:streamer_url', (req, res)=>{
 	//socket rooms
 	//
 
-
-	
 	// const note = response.body.customer_note
 	// const streamer = response.body.line_items[0].sku.slice(0,4)
 	// const product  = response.body.line_items[0].sku.slice(0,5)
