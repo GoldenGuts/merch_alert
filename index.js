@@ -25,6 +25,10 @@ io
     console.log(url)
     socket.join(url)
   })
+
+  socket.on("test_alert", () => {
+    
+  })
 })
 
 //For running local
