@@ -14,9 +14,6 @@ const httpsServer = https.createServer({
   cert: fs.readFileSync('./cert.pem'),
 }, app);
 
-https.globalAgent.options.ca = require('ssl-root-cas/latest').create();
-
-
 //For running on Website
 const io = require("socket.io")(httpsServer);
 
@@ -35,9 +32,9 @@ io.on('connection', socket => {
         console.log('Wrong Name')
       }
       else {
-        console.log(results[0].complete_url);
+        console.log(results[0].api_url);
         
-        fetch(results[0].complete_url, {
+        fetch(results[0].api_url, {
           method: 'POST',
           headers: {
             'Accept': 'text/html',
