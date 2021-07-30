@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const baseUrl = "https://forthefans.in:3000/alerts/"
-const { db } = require('../mysql_config/config')
+const { mysql, db } = require('../mysql_config/config')
 
 router.post('/check-streamer', (req, res)=>{
 	console.log('Streamer Name Sent By Generator ' + (req.body))
