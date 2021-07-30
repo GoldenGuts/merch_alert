@@ -6,7 +6,7 @@ const main = require('../data/alert_data.json')
 
 const router = express.Router();
 
-router.post('/:name', (req, res)=>{
+router.get('/:name', (req, res)=>{
 
 	var io = req.app.get('socketio');
 
