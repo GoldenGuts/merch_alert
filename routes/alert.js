@@ -35,6 +35,9 @@ router.get('/:streamer_url', (req, res)=>{
 });
 
 router.post('/:streamer_url', (req, res) => {
+
+	console.log("inside post request")
+
 	console.log(req.params.streamer_url)
 	blankPage = 0
 	res.status(200)

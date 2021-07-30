@@ -35,16 +35,13 @@ io.on('connection', socket => {
       else {
         console.log(results[0].complete_url);
 
-        fetch(results[0].api_url, {
+        fetch(results[0].complete_url, {
           method: 'POST',
           headers: {
             'Accept': 'text/html',
             'Content-Type': 'application/json'
           },
-          body: {
-            "name": "Golden",
-            "product": "T-Shirt"
-          }
+          body: { }
         })
         
       }
