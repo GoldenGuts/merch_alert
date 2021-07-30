@@ -16,7 +16,18 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 	});
 
 	alertSocket.on("order_alert", order => {
-		console.log(order);
+		// display the alert
+
+		const alert = document.getElementById("alert")
+		const customer_name = document.getElementById("customer_name");
+		const customer_product = document.getElementById("customer_product");
+
+		customer_name.textContent = order.name;
+		customer_product.textContent = order.product;
+
+		alert.classList.add("show");
+
+		setTimeout(() => alert.classList.remove("show"), 5000);
 	});
 } else {
 	socket.on('message', message => {
