@@ -26,11 +26,15 @@ router.get('/:streamer_url', (req, res)=>{
 	});
 })
 
-router.post('/:streamer_url', (req, res) => {
+router.get('/streamer_url', (req, res) => {
 	res.render('alertMain', {
 		name: req.body.name,
 		product: req.body.product
 	});
+})
+
+router.post('/:streamer_url', (req, res) => {
+	res.redirect(`/${req.params.streamer_url}`)
 	console.log(req.params.streamer_url)
 	res.status(200)
 })
