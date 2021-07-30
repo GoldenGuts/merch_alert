@@ -1,4 +1,4 @@
-const socket = io(); 
+const socket = io("https:forthefans.in:3000/alerts/"); 
 const test_button = document.getElementById('test_alert');
 
 socket.on('message', message => {
