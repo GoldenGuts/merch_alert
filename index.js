@@ -34,14 +34,14 @@ io.on('connection', socket => {
       }
       else {
         console.log(results[0].complete_url);
-        let dataToBeSent = {"name":"Golden","product":"T-Shirt"}
+        
         fetch(results[0].complete_url, {
           method: 'POST',
           headers: {
             'Accept': 'text/html',
-            'Content-Type': 'application/json'
+            'Content-Type': 'text/plain'
           },
-          body: JSON.parse(JSON.stringify(dataToBeSent))
+          body: {"name":"Golden","product":"T-Shirt"}
         })
         
       }
