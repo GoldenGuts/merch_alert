@@ -15,6 +15,9 @@ const httpsServer = https.createServer({
   cert: fs.readFileSync('./cert.pem'),
 }, app);
 
+https.globalAgent.options.ca = require('ssl-root-cas/latest').create();
+
+
 //For running on Website
 const io = require("socket.io")(httpsServer);
 
