@@ -35,7 +35,7 @@ router.get('/:streamer_url', (req, res)=>{
 		if(err) {
 			console.error(err);
 		} else {
-			console.log(data[0].complete_url);
+			try { console.log(data[0].complete_url); } catch (e){console.log(e)}
 			res.render('alertMain', {
 				name: 'name',
 				product: 'product'

@@ -16,20 +16,20 @@ const httpsServer = https.createServer({
 //For running on Website
 const io = require("socket.io")(httpsServer);
 
-// io.of('/alerts').on('connection', socket => {
+io.of('/alerts').on('connection', socket => {
 
-//     console.log("Inside Alert IO")
+    console.log("Inside Alert IO")
     
-//     socket.on("streamer_url", url =>{
-//       console.log("Inside Streamer URL")
-//       console.log(url)
-//       socket.join(url)
-//     });
+    socket.on("streamer_url", url =>{
+      console.log("Inside Streamer URL")
+      console.log(url)
+      socket.join(url)
+    });
     
-//     // socket.on("test_alert", () => {
+    // socket.on("test_alert", () => {
       
-//       // })
-// })
+      // })
+})
     
 io.on('connection', socket => {
      
