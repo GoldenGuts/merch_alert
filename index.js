@@ -4,6 +4,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path')
 const app = express();
+const fetch = require('fetch')
 
 const port = process.env.PORT || 3000;
 const server = require('http').createServer(app);
