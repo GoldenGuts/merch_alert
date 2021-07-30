@@ -37,8 +37,8 @@ router.get('/:streamer_url', (req, res)=>{
 		} else {
 			console.log(data[0].complete_url);
 			res.render('alertMain', {
-			name: alert_data.name,
-			product: 'product'
+				name: 'name',
+				product: 'product'
 			});
 		}    
 	});
