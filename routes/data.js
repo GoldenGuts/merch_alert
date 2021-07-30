@@ -1,21 +1,7 @@
 const express = require('express')
-const mysql = require('mysql')
 const router = express.Router()
 const baseUrl = "https://forthefans.in:3000/alerts/"
-
-const db = mysql.createConnection({
-	host: '127.0.0.1',
-	user: 'ftf',
-	password: '0mzflrSvuqBInE9',
-	database: 'merch_alert'
-})
-
-db.connect(function(err) {
-	if (err) {
-	  return console.error('error: ' + err.message);
-	}
-	console.log('Connected to the MySQL server.');
-});
+const { db } = require('../mysql_config/config')
 
 router.post('/check-streamer', (req, res)=>{
 	console.log('Streamer Name Sent By Generator ' + (req.body))
