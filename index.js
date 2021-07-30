@@ -20,21 +20,32 @@ io.on('connection', socket => {
   
   console.log("Inside Main IO")
   
-  // socket.on("test_alert", data => {
-  //   const { db } = require('./mysql_config/config')
-  //   let sql = `SELECT * FROM merch_alert WHERE name=?`;
-  //   db.query(sql, data.toString().toUpperCase(), (error, results, fields) => {
-  //     if (error) {
-  //       return console.error(error.message);
-  //     } 
-  //     if(!results.length) {
-  //       console.log('Wrong Name')
-  //     }
-  //     else {
-  //       console.log(results[0].complete_url);
-  //     }
-  //   });
-  // })
+  socket.on("test_alert", data => {
+    const { db } = require('./mysql_config/config')
+    let sql = `SELECT * FROM merch_alert WHERE name=?`;
+    db.query(sql, data.toString().toUpperCase(), (error, results, fields) => {
+      if (error) {
+        return console.error(error.message);
+      } 
+      if(!results.length) {
+        console.log('Wrong Name')
+      }
+      else {
+        console.log(results[0].complete_url);
+      }
+    })
+    fetch(results[0].complete_url, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: {
+        name: "Golden",
+        product: "T-Shirt"
+      }
+    })
+  })
 })
   
 io.of('/alerts').on('connection', socket => {
@@ -46,33 +57,6 @@ io.of('/alerts').on('connection', socket => {
       console.log(url)
       socket.join(url)
     });
-    
-    socket.on("test_alert", data => {
-      const { db } = require('./mysql_config/config')
-      let sql = `SELECT * FROM merch_alert WHERE name=?`;
-      db.query(sql, data.toString().toUpperCase(), (error, results, fields) => {
-        if (error) {
-          return console.error(error.message);
-        } 
-        if(!results.length) {
-          console.log('Wrong Name')
-        }
-        else {
-          console.log(results[0].complete_url);
-        }
-      })
-      fetch(results[0].complete_url, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: {
-          name: "Golden",
-          product: "T-Shirt"
-        }
-      })
-    })
 })
 //For running local
 // const io = require("socket.io")(server);
