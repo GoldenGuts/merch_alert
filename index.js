@@ -41,8 +41,8 @@ io.on('connection', socket => {
             'Content-Type': 'application/json'
           },
           body: {
-            name: "Golden",
-            product: "T-Shirt"
+            "name": "Golden",
+            "product": "T-Shirt"
           }
         })
       }
