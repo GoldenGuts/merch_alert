@@ -2,7 +2,6 @@ const express = require('express')
 const path = require('path')
 const { mysql, db } = require('../mysql_config/config')
 const router = express.Router();
-let blankPage = 1;
 
 router.get('/:streamer_url', (req, res)=>{
 
@@ -26,16 +25,5 @@ router.get('/:streamer_url', (req, res)=>{
 		}
 	})
 });
-
-
-
-router.post('/:streamer_url', (req, res) => {
-
-	console.log("name = " + JSON.parse(req.body).name)
-
-	console.log(req.params.streamer_url)
-	blankPage = 0
-	res.status(200)
-})
 
 module.exports = router

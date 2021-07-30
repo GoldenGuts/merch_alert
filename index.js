@@ -29,7 +29,7 @@ io.on('connection', socket => {
     db.query(sql, data.toString().toUpperCase(), (error, results, fields) => {
       if (error) {
         return console.error(error.message);
-      } 
+      }
       if(!results.length) {
         console.log('Wrong Name')
       }

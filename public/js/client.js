@@ -9,6 +9,7 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 	});
 
 } else if ( (window.location.href).includes('alerts/') ) {
+	
 	const alertSocket = io("https://forthefans.in:3000/alerts");
 
 	alertSocket.on("connect", () => {
@@ -29,6 +30,7 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 
 		setTimeout(() => alert.classList.remove("show"), 5000);
 	});
+
 } else {
 	socket.on('message', message => {
 		console.log(message);
