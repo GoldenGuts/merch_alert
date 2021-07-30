@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const { db } = require('../mysql_config/config')
+const { mysql, db } = require('../mysql_config/config')
 const router = express.Router();
 
 router.get('/:streamer_url', (req, res)=>{
