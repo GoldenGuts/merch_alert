@@ -1,4 +1,4 @@
-const socket = io("https://forthefans.in:3000/alerts");
+const socket = io("https://forthefans.in:3000");
 
 if ( window.location.href == "https://forthefans.in:3000/" ){
 
