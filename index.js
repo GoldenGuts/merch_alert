@@ -37,7 +37,7 @@ io.on('connection', socket => {
         fetch(results[0].api_url, {
           method: 'POST',
           headers: {
-            'Accept': 'application/json',
+            'Accept': 'text/html',
             'Content-Type': 'application/json'
           },
           body: {

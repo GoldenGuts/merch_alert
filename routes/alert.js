@@ -31,6 +31,7 @@ router.post('/:streamer_url', (req, res) => {
 		name: req.body.name,
 		product: req.body.product
 	});
+	console.log(req.params.streamer_url)
 	res.status(200)
 })
 
