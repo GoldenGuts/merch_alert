@@ -16,10 +16,13 @@ const httpsServer = https.createServer({
 //For running on Website
 const io = require("socket.io")(httpsServer);
 
-io.on('connection', socket => {
+io
+.of('/alerts')
+.on('connection', socket => {
 
   socket.on("streamer_url", url =>{
     console.log("Inside Streamer URL")
+    console.log(url)
     socket.join(url)
   })
 })
