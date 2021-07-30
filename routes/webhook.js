@@ -31,7 +31,8 @@ router.post('/get_data', (request,response) => {
 	  }
 	  else {
 		console.log('FOUND THE STREAMER YAYAY!!')
-	    	const streamer_url = results[0].complete_url;
+		const streamer_url = results[0].complete_url;
+		console.log(streamer_url)
 	    	alertsNsp.to(streamer_url).emit("order_alert", dataObj);
 	  }
 	})
