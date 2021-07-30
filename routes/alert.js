@@ -22,19 +22,17 @@ router.get('/:streamer_url', (req, res)=>{
 		}
 		else {
 			try { console.log(data[0].complete_url); } catch (e){console.log(e)}
-			if(blankPage == 1) res.render('blankPage');
-			if(blankPage == 0 ){
-				res.render('alertMain', {
-					name: req.body.name,
-					product: req.body.product
-				});
-				setTimeout(function(){ blankPage = 1 }, 7000);
-			}
+			res.render('blankPage');
 		}
 	})
 });
 
 router.post('/:streamer_url', (req, res) => {
+
+	res.render('alertMain', {
+		name: JSON.parse(req.body).name,
+		product: JSON.parse(req.body).product
+	});
 
 	console.log("name = " + JSON.parse(req.body).name)
 
