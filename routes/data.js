@@ -1,6 +1,7 @@
 const express = require('express')
 const mysql = require('mysql')
 const router = express.Router()
+const baseUrl = "https://forthefans.in:3000/alerts/"
 
 const db = mysql.createConnection({
 	host: '127.0.0.1',
@@ -30,20 +31,18 @@ router.post('/check-streamer', (req, res)=>{
 		}
 		if(!data.length) {
 
-			const unique_url = req.body + (Math.floor(Math.random() * 10000) + 111);
+			const unique_url = (req.body).toLowerCase() + (Math.floor(Math.random() * 10000) + 111);
 
-			let sql_new = "INSERT INTO merch_alert (name, unique_url) VALUES (?, ?)";
+			let sql_new = "INSERT INTO merch_alert (name, unique_url, complete_url) VALUES (?, ?, ?)";
 
-			db.query(sql_new, [(req.body).toUpperCase(), unique_url], (err1, rows) => {
+			db.query(sql_new, [(req.body).toUpperCase(), unique_url, (baseUrl+unique_url) ], (err1, rows) => {
 				if (err1) throw err1;
 				console.log("Row inserted with id = "
 				    + rows.insertId);
 			});
-			console.log({ "url" : unique_url })
 			res.json({ "url" : unique_url })
 		}
 		else {
-			console.log(data)
 			res.json(data);
 		}
 	});

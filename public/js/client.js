@@ -1,5 +1,5 @@
 const socket = io(); 
-const test_button = document.getElementById('generate');
+const test_button = document.getElementById('test_alert');
 
 socket.on('message', message => {
 	console.log(message);
@@ -11,5 +11,5 @@ socket.on("connect", () => {
 
 
 test_button.addEventListener('click', event => {
-	socket.emit("test_alert", "...");
+	socket.emit("test_alert", "message");
 });

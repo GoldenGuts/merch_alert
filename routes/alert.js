@@ -19,6 +19,11 @@ router.post('/:name', (req, res)=>{
 	const streamer = response.body.line_items[0].sku.slice(0,4)
 	const product  = response.body.line_items[0].sku.slice(0,5)
 	const buyer = response.body.billing.first_name
+
+	io.on("test_alert", message => {
+		console.log("Inside TestAlert")
+		socket.to(message.url).emit("item_bought", {hello: "world"});
+	})
 	// TODO 
 	// Find if name exist in streamers.json
 	// Math.random().toString(36).slice(2);
