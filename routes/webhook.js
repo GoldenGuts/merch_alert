@@ -8,7 +8,7 @@ router.post('/get_data', (request,response) => {
 
 	response.status(200).json({ message: 'ok' });
 
-	console.log(request.body);
+	// console.log(request.body);
 
 	// const note = request.body.customer_note
 
@@ -18,6 +18,7 @@ router.post('/get_data', (request,response) => {
 		product: "T-Shirt",
 		name: request.body.billing.first_name
 	}
+	console.log(dataObj);
 
 	const { db } = require('../mysql_config/config')
 	let sql = `SELECT * FROM merch_alert WHERE name=?`;
@@ -29,8 +30,9 @@ router.post('/get_data', (request,response) => {
 	    console.log('Wrong Name')
 	  }
 	  else {
-	    const streamer_url = results[0].complete_url;
-	    alertsNsp.to(streamer_url).emit("order_alert", dataObj);
+		console.log('FOUND THE STREAMER YAYAY!!')
+	    	const streamer_url = results[0].complete_url;
+	    	alertsNsp.to(streamer_url).emit("order_alert", dataObj);
 	  }
 	})
 });
