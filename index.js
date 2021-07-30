@@ -41,7 +41,7 @@ io.on('connection', socket => {
             'Accept': 'text/html',
             'Content-Type': 'text/plain'
           },
-          body: {"name":"Golden","product":"T-Shirt"}
+          body: '{"name":"Golden","product":"T-Shirt"}'
         })
         
       }
