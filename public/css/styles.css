@@ -32,13 +32,15 @@ h1{
   font-size: 6em;
   padding: 0;
   color: white;
-  opacity: 0;
+  visibility: hidden;
+  /* opacity: 0; */
   transition: opacity 350ms;
   text-shadow: 0 0.1em 20px black, 0.05em -0.03em 0 black, 0.05em 0.005em 0 black, 0em 0.08em 0 black, 0.05em 0.08em 0 black, 0px -0.03em 0 black, -0.03em -0.03em 0 black, -0.03em 0.08em 0 black, -0.03em 0 0 black;
 }
 
 .alert.show {
-  opacity: 1;
+  visibility: visible;
+  /* opacity: 1; */
 }
 
 .alert span {
