@@ -33,14 +33,20 @@ h1{
   padding: 0;
   color: white;
   visibility: hidden;
-  /* opacity: 0; */
-  transition: opacity 350ms;
+  transition: visibility 350ms;
   text-shadow: 0 0.1em 20px black, 0.05em -0.03em 0 black, 0.05em 0.005em 0 black, 0em 0.08em 0 black, 0.05em 0.08em 0 black, 0px -0.03em 0 black, -0.03em -0.03em 0 black, -0.03em 0.08em 0 black, -0.03em 0 0 black;
 }
 
 .alert.show {
   visibility: visible;
-  /* opacity: 1; */
+}
+
+#image_above {
+  visibility: hidden;
+}
+
+#image_above.visible {
+  visibility: visible;
 }
 
 .alert span {
