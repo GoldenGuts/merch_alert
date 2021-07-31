@@ -14,6 +14,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   /* font-family: "Luckiest Guy", cursive !important; */
+  pointer-events: none !important;
 }
 
 .container{
@@ -27,7 +28,6 @@ h1{
 }
 
 .alert {
-  pointer-events: none;
   margin: 0;
   font-size: 6em;
   padding: 0;
@@ -46,6 +46,7 @@ h1{
 }
 
 #image_above {
+  pointer-events: none !important;
   transition: visibility 250ms;
   visibility: hidden;
 }
@@ -82,14 +83,14 @@ h1{
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-family: "Luckiest Guy", cursive;
-  font-size: 90px;
+  font-size: 200%;
   z-index: 999;
   color: white;
 }
 
 
 .bought{
-  font-size: 60px;
+  font-size: 60%;
   font-family: Anton;
 }
 
