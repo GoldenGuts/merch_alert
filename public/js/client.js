@@ -19,12 +19,16 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 	alertSocket.on("order_alert", order => {
 		// display the alert
 
+		const gif = document.getElementById("image_above")
 		const alert = document.getElementById("alert")
 		const customer_name = document.getElementById("customer_name");
 		const customer_product = document.getElementById("customer_product");
+		const customer_note = document.getElementById("customer_note");
 
+		gif.src = "https://i.ibb.co/XC378QL/giphy.gif"
 		customer_name.textContent = order.name;
 		customer_product.textContent = order.product;
+		customer_note.textContent = order.note;
 
 		alert.classList.add("show");
 
