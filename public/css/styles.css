@@ -39,13 +39,16 @@ h1{
 
 .alert.show {
   visibility: visible;
+  transition: visibility 350ms;
 }
 
 #image_above {
+  transition: visibility 350ms;
   visibility: hidden;
 }
 
 #image_above.visible {
+  transition: visibility 350ms;
   visibility: visible;
 }
 
