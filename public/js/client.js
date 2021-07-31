@@ -34,7 +34,7 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 		gif.classList.add("visible");
 
 		setTimeout(() => alert.classList.remove("show"), 10000);
-		setTimeout(() => gif.classList.remove("visible"), 9500);
+		setTimeout(() => gif.classList.remove("visible"), 10000);
 	});
 
 } else {
