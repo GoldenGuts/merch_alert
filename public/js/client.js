@@ -20,7 +20,7 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 		// display the alert
 
 		const gif = document.getElementById("image_above")
-		const alert = document.getElementById("alert")
+		const alert = document.getElementById("alert_container")
 		const customer_name = document.getElementById("customer_name");
 		const customer_product = document.getElementById("customer_product");
 		const customer_note = document.getElementById("customer_note");
