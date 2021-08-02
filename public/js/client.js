@@ -25,12 +25,12 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 		const customer_product = document.getElementById("customer_product");
 		const customer_note = document.getElementById("customer_note");
 
-		gif.src = "https://i.ibb.co/XC378QL/giphy.gif"
+		gif.src = "../images/logo.png"
 		customer_name.textContent = order.name;
 		customer_product.textContent = order.product;
 		customer_note.textContent = order.note;
 
-		alert.classList.add("show");
+		alert.classList.add("show");/*  */
 		gif.classList.add("visible");
 
 		setTimeout(() => alert.classList.remove("show"), 10000);

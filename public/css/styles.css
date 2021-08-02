@@ -4,6 +4,7 @@ html {
 }
 
 body {
+  user-select: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,10 +32,10 @@ h1{
   font-size: 6em;
   padding: 0;
   color: white;
-  text-shadow: 0 0.1em 20px black, 0.05em -0.03em 0 black, 0.05em 0.005em 0 black, 0em 0.08em 0 black, 0.05em 0.08em 0 black, 0px -0.03em 0 black, -0.03em -0.03em 0 black, -0.03em 0.08em 0 black, -0.03em 0 0 black;
+  /* text-shadow: 0 0.1em 20px black, 0.05em -0.03em 0 black, 0.05em 0.005em 0 black, 0em 0.08em 0 black, 0.05em 0.08em 0 black, 0px -0.03em 0 black, -0.03em -0.03em 0 black, -0.03em 0.08em 0 black, -0.03em 0 0 black; */
 }
 
-#alert_container {
+/* #alert_container {
   visibility: hidden;
   transition: visibility 250ms;
 }
@@ -53,13 +54,13 @@ h1{
 #image_above.visible {
   transition: visibility 250ms;
   visibility: visible;
-}
+} */
 
 .alert span {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
   display: inline-block;
-  color: #38dd5f;
+  color: #cacaca;
 }
 
 .alert span:first-child {
@@ -77,16 +78,33 @@ h1{
 }
 
 .alert_text {
+  pointer-events: none !important;
   position: absolute;
   top: 100%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  /* font-family: "Poppins", cursive; */
   font-family: "Luckiest Guy", cursive;
   font-size: 200%;
   z-index: 999;
   color: white;
+  text-shadow: 0 0.1em 20px black, 0.05em -0.03em 0 black, 0.05em 0.005em 0 black, 0em 0.08em 0 black, 0.05em 0.08em 0 black, 0px -0.03em 0 black, -0.03em -0.03em 0 black, -0.03em 0.08em 0 black, -0.03em 0 0 black;
+
 }
 
+.widthSet {
+  pointer-events: none !important;
+  
+  width: 22%;
+  height: auto;
+  position: relative;
+  left: 40%;
+}
+
+#customer_note{
+  pointer-events: none !important;
+  -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+}
 
 .bought{
   font-size: 60%;
