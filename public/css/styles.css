@@ -103,7 +103,7 @@ h1{
 
 #customer_note{
   pointer-events: none !important;
-  -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+  font-family: Poppins;
 }
 
 .bought{
