@@ -103,7 +103,8 @@ h1{
 
 #customer_note{
   pointer-events: none !important;
-  font-family: Poppins;
+  font-family: 15px Poppins;
+  color: White;
 }
 
 .bought{
