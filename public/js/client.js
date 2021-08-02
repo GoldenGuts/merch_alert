@@ -24,7 +24,9 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 		const customer_name = document.getElementById("customer_name");
 		const customer_product = document.getElementById("customer_product");
 		const customer_note = document.getElementById("customer_note");
+		const audio = document.getElementById("audio");
 
+		audio.play();
 		gif.src = "../images/logo.png"
 		customer_name.textContent = order.name;
 		customer_product.textContent = order.product;
