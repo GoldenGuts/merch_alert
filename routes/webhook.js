@@ -14,7 +14,7 @@ router.post('/get_data', (request,response) => {
 		product: request.body.line_items[0].sku.slice(4,5),
 		note: request.body.customer_note
 	}
-	console.log(dataObj);
+	console.log(new Date() + dataObj);
 
 	const { db } = require('../mysql_config/config')
 	let sql = `SELECT * FROM merch_alert WHERE name=?`;
