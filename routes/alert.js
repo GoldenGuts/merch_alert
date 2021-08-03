@@ -24,6 +24,7 @@ router.get('/:streamer_url', (req, res)=>{
 			res.render('alertMain');
 		}
 	})
+	db.end();
 });
 
 module.exports = router
