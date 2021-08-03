@@ -39,6 +39,7 @@ io.on('connection', socket => {
         alertsNsp.to(streamer_url).emit("order_alert", { product: "T-Shirt", name: "Customer", note: "This is the test Script BWHWHHAHAHHA SHOUTTTOUTTTTTTT" })
       }
     })
+    db.release();
   })
 })
   

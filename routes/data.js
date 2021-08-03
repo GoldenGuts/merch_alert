@@ -32,7 +32,7 @@ router.post('/check-streamer', (req, res)=>{
 			res.json(data);
 		}
 	});
-	db.end();
+	db.release();
 	res.status(200)
 	// res.json({ message: 'ok' })
 })
