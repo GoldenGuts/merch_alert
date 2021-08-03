@@ -11,8 +11,7 @@ router.post('/get_data', (request,response) => {
 	const streamer = request.body.line_items[0].sku.slice(0,4)
 	const dataObj  = {
 		name: request.body.billing.first_name,
-		// product: request.body.line_items[0].sku.slice(0,5),
-		product: "T-Shirt",
+		product: request.body.line_items[0].sku.slice(4,5),
 		note: request.body.customer_note
 	}
 	console.log(dataObj);

@@ -19,17 +19,21 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 	alertSocket.on("order_alert", order => {
 		// display the alert
 
-		const gif = document.getElementById("image_above")
-		const alert = document.getElementById("alert_container")
+		const gif = document.getElementById("image_above");
+		const alert = document.getElementById("alert_container");
 		const customer_name = document.getElementById("customer_name");
 		const customer_product = document.getElementById("customer_product");
 		const customer_note = document.getElementById("customer_note");
 		const audio = document.getElementById("audio");
+		
+		let product;
+		if(order.product == 1) product = "T-Shirt";
+		if(order.product == 2) product = "Poster";
 
 		audio.play();
 		gif.src = "../images/logo.png"
 		customer_name.textContent = order.name;
-		customer_product.textContent = order.product;
+		customer_product.textContent = product;
 		customer_note.textContent = order.note;
 
 		alert.classList.add("show");/*  */
