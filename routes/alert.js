@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const { mysql, db } = require('../mysql_config/config')
+const { mysql, pool } = require('../mysql_config/config')
 const router = express.Router();
 
 router.get('/:streamer_url', (req, res)=>{
@@ -11,20 +11,25 @@ router.get('/:streamer_url', (req, res)=>{
 
 	let query = mysql.format(sql, req.params.streamer_url);
 
-	db.query(query,(err, data) => {
-		if(err) {
-			console.error(err);
-		} 
-		if(!data.length) {
-			res.redirect('https://forthefans.in/ERROR404')
-			console.log('Wrong URL')
-		}
-		else {
-			try { console.log(data[0].complete_url); } catch (e){console.log(e)}
-			res.render('alertMain');
-		}
+	pool.getConnection(function(err, connection) {
+		connection.query(query,(err1, data) => {
+			if(err1) {
+				console.error(err1);
+			} 
+			if(!data.length) {
+				res.redirect('https://forthefans.in/ERROR404')
+				console.log('Wrong URL')
+			}
+			else {
+				try { console.log(data[0].complete_url); } catch (e){console.log(e)}
+				res.render('alertMain');
+			}
+			console.log(pool._freeConnections.indexOf(connection)); // -1
+      			connection.release();
+      			console.log(pool._freeConnections.indexOf(connection)); // 0
+		})
 	})
-	db.release();
+	
 });
 
 module.exports = router

@@ -1,6 +1,6 @@
 const mysql = require('mysql')
 
-const db = mysql.createPool({
+const pool = mysql.createPool({
 	connectionLimit : 10,
 	host: '127.0.0.1',
 	user: 'ftf',
@@ -8,4 +8,4 @@ const db = mysql.createPool({
 	database: 'merch_alert'
 })
 
-module.exports = { mysql, db }
+module.exports = { mysql, pool }

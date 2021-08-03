@@ -24,22 +24,26 @@ io.on('connection', socket => {
   console.log("Inside Main IO")
   
   socket.on("test_alert", data => {
-    const { db } = require('./mysql_config/config')
+    const { pool } = require('./mysql_config/config')
     let sql = `SELECT * FROM merch_alert WHERE name=?`;
-    db.query(sql, data.toString().toUpperCase(), (error, results, fields) => {
-      if (error) {
-        return console.error(error.message);
-      }
-      if(!results.length) {
-        console.log('Wrong Name')
-      }
-      else {
-        const streamer_url = results[0].complete_url;
-        
-        alertsNsp.to(streamer_url).emit("order_alert", { product: "T-Shirt", name: "Customer", note: "This is the test Script BWHWHHAHAHHA SHOUTTTOUTTTTTTT" })
-      }
+    pool.getConnection(function(err, connection) {
+      connection.query(sql, data.toString().toUpperCase(), (error, results, fields) => {
+        if (error) {
+          return console.error(error.message);
+        }
+        if(!results.length) {
+          console.log('Wrong Name')
+        }
+        else {
+          const streamer_url = results[0].complete_url;
+          
+          alertsNsp.to(streamer_url).emit("order_alert", { product: "T-Shirt", name: "Customer", note: "This is the test Script BWHWHHAHAHHA SHOUTTTOUTTTTTTT" })
+        }
+        console.log(pool._freeConnections.indexOf(connection)); // -1
+        connection.release();
+        console.log(pool._freeConnections.indexOf(connection)); // 0
+      })
     })
-    db.release();
   })
 })
   

@@ -18,23 +18,28 @@ router.post('/get_data', (request,response) => {
 	console.log(dataObj);
 	console.log(new Date());
 
-	const { db } = require('../mysql_config/config')
+	const { pool } = require('../mysql_config/config')
 	let sql = `SELECT * FROM merch_alert WHERE name=?`;
-	db.query(sql, streamer.toString().toUpperCase(), (error, results, fields) => {
-	  if (error) {
-	    return console.error(error.message);
-	  }
-	  if(!results.length) {
-	    console.log('Wrong Name')
-	  }
-	  else {
-		console.log('FOUND THE STREAMER YAYAY!!')
-		const streamer_url = results[0].complete_url;
-		console.log(streamer_url)
-	    	alertsNsp.to(streamer_url).emit("order_alert", dataObj);
-	  }
-	})
-	db.release();
-});
+	pool.getConnection(function(err, connection) {
+		connection.query(sql, streamer.toString().toUpperCase(), (error, results, fields) => {
+			if (error) {
+				return console.error(error.message);
+			}
+			if(!results.length) {
+				console.log('Wrong Name')
+			}
+			else {
+				console.log('FOUND THE STREAMER YAYAY!!')
+				const streamer_url = results[0].complete_url;
+				console.log(streamer_url)
+				alertsNsp.to(streamer_url).emit("order_alert", dataObj);
+			}
+			console.log(pool._freeConnections.indexOf(connection)); // -1
+			connection.release();
+			console.log(pool._freeConnections.indexOf(connection)); // 0
+		})
+		
+	});
+})
 
 module.exports =  router
