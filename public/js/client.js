@@ -24,14 +24,16 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 		const customer_name = document.getElementById("customer_name");
 		const customer_product = document.getElementById("customer_product");
 		const customer_note = document.getElementById("customer_note");
-		const audio = document.getElementById("audio");
 		
 		let product;
-		if(order.product == 1) product = "T-Shirt";
-		if(order.product == 2) product = "Poster";
-		else product = "Something"
+		if(order.product == 1) 
+			product = "T-Shirt";
+		else if(order.product == 2) 
+			product = "Poster";
+		else
+			product = "Something"
 
-		audio.currentTime = 0;
+		const audio = new Audio('../audio/tuturu.mp3');
 		audio.play();
 		gif.src = "../images/logo.png"
 		customer_name.textContent = order.name;
