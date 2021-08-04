@@ -31,17 +31,18 @@ if ( window.location.href == "https://forthefans.in:3000/" ){
 		if(order.product == 2) product = "Poster";
 		else product = "Something"
 
+		audio.currentTime = 0;
+		audio.play();
 		gif.src = "../images/logo.png"
 		customer_name.textContent = order.name;
 		customer_product.textContent = product;
 		customer_note.textContent = order.note;
-		audio.play();
 
 		alert.classList.add("show");
 		gif.classList.add("visible");
 
-		setTimeout(() => alert.classList.remove("show"), 10000);
-		setTimeout(() => gif.classList.remove("visible"), 10000);
+		setTimeout(() => alert.classList.remove("show"), 15000);
+		setTimeout(() => gif.classList.remove("visible"), 15000);
 	});
 
 } else {
